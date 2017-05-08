@@ -1,38 +1,89 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <style>
+
 .btn {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  background-color: white;
   border: 1px solid red;
 }
 
 </style>
 
 <script>
-    var count = new Array(128);
-    for (index = 0; i < count.length; i++) {
-        count = 1
-    }
-    function setColor(btn, numero) {
-        var property = document.getElementById(btn);
+
+	var numeroPulsanti = 16*8;
+    	
+	var count = new Array(numeroPulsanti);
+    	for (var i = 0; i < count.length; i++) {
+        count[i] = 1
+    	}
+
+
+ function spawnPulsanti() {
+
+	for (var i=0; i < numeroPulsanti; i++){
+	   switch (i){
+		case 0:
+			document.getElementById("pulsanti").innerHTML += "<p> clave grande: <p>";
+			break;
+		case 16:
+			document.getElementById("pulsanti").innerHTML += "<p> clave piccolo: <p>";
+ 			break;
+		case 32:
+			document.getElementById("pulsanti").innerHTML += "<p> campana grande: <p>";
+ 			break;
+		case 48:
+			document.getElementById("pulsanti").innerHTML += "<p> campana piccola: <p>";
+ 			break;
+		case 64:
+			document.getElementById("pulsanti").innerHTML += "<p> timpano: <p>";
+ 			break;
+		case 80:
+			document.getElementById("pulsanti").innerHTML += "<p> piatto: <p>";
+ 			break;
+		case 96:
+			document.getElementById("pulsanti").innerHTML += "<p> rullante: <p>";
+ 			break;
+		case 112:
+			document.getElementById("pulsanti").innerHTML += "<p> charleston: <p>";
+ 			break;
+		default:
+			break;
+	   }
+
+	var bottone = "<input type=button class=btn id=button" + i + " onclick=setColor(" + i + ") /> ";
+	document.getElementById("pulsanti").innerHTML += bottone;
+	} 
+} 
+
+
+ function setColor(numero) {
+        var property = document.getElementById("button" + numero);
         if (count[numero] == 0) {
             property.style.backgroundColor = "#FFFFFF"
             count[numero] = 1;
         }
         else {
-            property.style.backgroundColor = "#7FFF00"
+            property.style.backgroundColor = "#FF0000"
             count[numero] = 0;
         }
-    }
+
+ }
+
+ function setValue(){
+	for(var i=0; i < numeroPulsanti; i++) {
+	console.log("button" + i + "=" + count[i]);
+	}
+ }
 </script>
 
 </head>
+
+
 
 <body>
 
@@ -42,285 +93,17 @@
 
 <h3>Create your ownn song! Select the semiquaver where the instrument has to sound!</h3>
 
-<p> clave grande: <p>
 
-<input type="button" class="btn" id="button" style= "color:black" onclick="setColor('button', '0')";/>
+	<div id="pulsanti" >
+	</div>
 
-<input type="button" class="btn" id="button2" style= "color:white" onclick="setColor('button2', '1')";/>
+<script> spawnPulsanti(); </script>
 
-<input type="button" class="btn" id="button3"  style= "color:white" onclick="setColor('button3')";/>
-
-<input type="button" class="btn" id="button4"  style= "color:white" onclick="setColor('button4')";/>
-
-<input type="button" class="btn" id="button5"  style= "color:white" onclick="setColor('button5')";/>
-
-<input type="button" class="btn" id="button6"  style= "color:white" onclick="setColor('button6')";/>
-
-<input type="button" class="btn" id="button7"  style= "color:white" onclick="setColor('button7')";/>
-
-<input type="button" class="btn" id="button8"  style= "color:white" onclick="setColor('button8')";/>
-
-<input type="button" class="btn" id="button9"  style= "color:white" onclick="setColor('button9')";/>
-
-<input type="button" class="btn" id="button10"  style= "color:white" onclick="setColor('button10')";/>
-
-<input type="button" class="btn" id="button11"  style= "color:white" onclick="setColor('button11')";/>
-
-<input type="button" class="btn" id="button12"  style= "color:white" onclick="setColor('button12')";/>
-
-<input type="button" class="btn" id="button13"  style= "color:white" onclick="setColor('button13')";/>
-
-<input type="button" class="btn" id="button14"  style= "color:white" onclick="setColor('button14')";/>
-
-<input type="button" class="btn" id="button15"  style= "color:white" onclick="setColor('button15')";/>
-
-<input type="button" class="btn" id="button16"  style= "color:white" onclick="setColor('button16')";/>
-
-
-<p> clave piccola: <p>
-
-<input type="button" class="btn" id="button17"  style= "color:white" onclick="setColor('button17')";/>
-
-<input type="button" class="btn" id="button18"  style= "color:white" onclick="setColor('button18')";/>
-
-<input type="button" class="btn" id="button19"  style= "color:white" onclick="setColor('button19')";/>
-
-<input type="button" class="btn" id="button20"  style= "color:white" onclick="setColor('button20')";/>
-
-<input type="button" class="btn" id="button21"  style= "color:white" onclick="setColor('button21')";/>
-
-<input type="button" class="btn" id="button22"  style= "color:white" onclick="setColor('button22')";/>
-
-<input type="button" class="btn" id="button23"  style= "color:white" onclick="setColor('button23')";/>
-
-<input type="button" class="btn" id="button24"  style= "color:white" onclick="setColor('button24')";/>
-
-<input type="button" class="btn" id="button25"  style= "color:white" onclick="setColor('button25')";/>
-
-<input type="button" class="btn" id="button26"  style= "color:white" onclick="setColor('button26')";/>
-
-<input type="button" class="btn" id="button27"  style= "color:white" onclick="setColor('button27')";/>
-
-<input type="button" class="btn" id="button28"  style= "color:white" onclick="setColor('button28')";/>
-
-<input type="button" class="btn" id="button29"  style= "color:white" onclick="setColor('button29')";/>
-
-<input type="button" class="btn" id="button30"  style= "color:white" onclick="setColor('button30')";/>
-
-<input type="button" class="btn" id="button31"  style= "color:white" onclick="setColor('button31')";/>
-
-<input type="button" class="btn" id="button32"  style= "color:white" onclick="setColor('button32')";/>
-
-
-<p> campana grande: <p>
-
-<input type="button" class="btn" id="button33"  style= "color:white" onclick="setColor('button33')";/>
-
-<input type="button" class="btn" id="button34"  style= "color:white" onclick="setColor('button34')";/>
-
-<input type="button" class="btn" id="button35"  style= "color:white" onclick="setColor('button35')";/>
-
-<input type="button" class="btn" id="button36"  style= "color:white" onclick="setColor('button36')";/>
-
-<input type="button" class="btn" id="button37"  style= "color:white" onclick="setColor('button37')";/>
-
-<input type="button" class="btn" id="button38"  style= "color:white" onclick="setColor('button38')";/>
-
-<input type="button" class="btn" id="button39"  style= "color:white" onclick="setColor('button39')";/>
-
-<input type="button" class="btn" id="button40"  style= "color:white" onclick="setColor('button40')";/>
-
-<input type="button" class="btn" id="button41"  style= "color:white" onclick="setColor('button41')";/>
-
-<input type="button" class="btn" id="button42"  style= "color:white" onclick="setColor('button42')";/>
-
-<input type="button" class="btn" id="button43"  style= "color:white" onclick="setColor('button43')";/>
-
-<input type="button" class="btn" id="button44"  style= "color:white" onclick="setColor('button44')";/>
-
-<input type="button" class="btn" id="button45"  style= "color:white" onclick="setColor('button45')";/>
-
-<input type="button" class="btn" id="button46"  style= "color:white" onclick="setColor('button46')";/>
-
-<input type="button" class="btn" id="button47"  style= "color:white" onclick="setColor('button47')";/>
-
-<input type="button" class="btn" id="button48"  style= "color:white" onclick="setColor('button48')";/>
-
-
-<p> campana piccola: <p>
-
-<input type="button" class="btn" id="button49"  style= "color:white" onclick="setColor('button49')";/>
-
-<input type="button" class="btn" id="button50"  style= "color:white" onclick="setColor('button50')";/>
-
-<input type="button" class="btn" id="button51"  style= "color:white" onclick="setColor('button51')";/>
-
-<input type="button" class="btn" id="button52"  style= "color:white" onclick="setColor('button52')";/>
-
-<input type="button" class="btn" id="button53"  style= "color:white" onclick="setColor('button53')";/>
-
-<input type="button" class="btn" id="button54"  style= "color:white" onclick="setColor('button54')";/>
-
-<input type="button" class="btn" id="button55"  style= "color:white" onclick="setColor('button55')";/>
-
-<input type="button" class="btn" id="button56"  style= "color:white" onclick="setColor('button56')";/>
-
-<input type="button" class="btn" id="button57"  style= "color:white" onclick="setColor('button57')";/>
-
-<input type="button" class="btn" id="button58"  style= "color:white" onclick="setColor('button58')";/>
-
-<input type="button" class="btn" id="button59"  style= "color:white" onclick="setColor('button59')";/>
-
-<input type="button" class="btn" id="button60"  style= "color:white" onclick="setColor('button60')";/>
-
-<input type="button" class="btn" id="button61"  style= "color:white" onclick="setColor('button61')";/>
-
-<input type="button" class="btn" id="button62"  style= "color:white" onclick="setColor('button62')";/>
-
-<input type="button" class="btn" id="button63"  style= "color:white" onclick="setColor('button63')";/>
-
-<input type="button" class="btn" id="button64"  style= "color:white" onclick="setColor('button64')";/>
-
-
-<p> timpano: <p>
-
-<input type="button" class="btn" id="button65"  style= "color:white" onclick="setColor('button65')";/>
-
-<input type="button" class="btn" id="button66"  style= "color:white" onclick="setColor('button66')";/>
-
-<input type="button" class="btn" id="button67"  style= "color:white" onclick="setColor('button67')";/>
-
-<input type="button" class="btn" id="button68"  style= "color:white" onclick="setColor('button68')";/>
-
-<input type="button" class="btn" id="button69"  style= "color:white" onclick="setColor('button69')";/>
-
-<input type="button" class="btn" id="button70"  style= "color:white" onclick="setColor('button70')";/>
-
-<input type="button" class="btn" id="button71"  style= "color:white" onclick="setColor('button71')";/>
-
-<input type="button" class="btn" id="button72"  style= "color:white" onclick="setColor('button72')";/>
-
-<input type="button" class="btn" id="button73"  style= "color:white" onclick="setColor('button73')";/>
-
-<input type="button" class="btn" id="button74"  style= "color:white" onclick="setColor('button74')";/>
-
-<input type="button" class="btn" id="button75"  style= "color:white" onclick="setColor('button75')";/>
-
-<input type="button" class="btn" id="button76"  style= "color:white" onclick="setColor('button76')";/>
-
-<input type="button" class="btn" id="button77"  style= "color:white" onclick="setColor('button77')";/>
-
-<input type="button" class="btn" id="button78"  style= "color:white" onclick="setColor('button78')";/>
-
-<input type="button" class="btn" id="button79"  style= "color:white" onclick="setColor('button79')";/>
-
-<input type="button" class="btn" id="button80"  style= "color:white" onclick="setColor('button80')";/>
-
-
-<p> piatto: <p>
-
-<input type="button" class="btn" id="button81"  style= "color:white" onclick="setColor('button81')";/>
-
-<input type="button" class="btn" id="button82"  style= "color:white" onclick="setColor('button82')";/>
-
-<input type="button" class="btn" id="button83"  style= "color:white" onclick="setColor('button83')";/>
-
-<input type="button" class="btn" id="button84"  style= "color:white" onclick="setColor('button84')";/>
-
-<input type="button" class="btn" id="button85"  style= "color:white" onclick="setColor('button85')";/>
-
-<input type="button" class="btn" id="button86"  style= "color:white" onclick="setColor('button86')";/>
-
-<input type="button" class="btn" id="button87"  style= "color:white" onclick="setColor('button87')";/>
-
-<input type="button" class="btn" id="button88"  style= "color:white" onclick="setColor('button88')";/>
-
-<input type="button" class="btn" id="button89"  style= "color:white" onclick="setColor('button89')";/>
-
-<input type="button" class="btn" id="button90"  style= "color:white" onclick="setColor('button90')";/>
-
-<input type="button" class="btn" id="button91"  style= "color:white" onclick="setColor('button91')";/>
-
-<input type="button" class="btn" id="button92"  style= "color:white" onclick="setColor('button92')";/>
-
-<input type="button" class="btn" id="button93"  style= "color:white" onclick="setColor('button93')";/>
-
-<input type="button" class="btn" id="button94"  style= "color:white" onclick="setColor('button94')";/>
-
-<input type="button" class="btn" id="button95"  style= "color:white" onclick="setColor('button95')";/>
-
-<input type="button" class="btn" id="button96"  style= "color:white" onclick="setColor('button96')";/>
-
-
-<p> rullante: <p>
-
-<input type="button" class="btn" id="button97"  style= "color:white" onclick="setColor('button97')";/>
-
-<input type="button" class="btn" id="button98"  style= "color:white" onclick="setColor('button98')";/>
-
-<input type="button" class="btn" id="button99"  style= "color:white" onclick="setColor('button99')";/>
-
-<input type="button" class="btn" id="button100"  style= "color:white" onclick="setColor('button100')";/>
-
-<input type="button" class="btn" id="button101"  style= "color:white" onclick="setColor('button101')";/>
-
-<input type="button" class="btn" id="button102"  style= "color:white" onclick="setColor('button102')";/>
-
-<input type="button" class="btn" id="button103"  style= "color:white" onclick="setColor('button103')";/>
-
-<input type="button" class="btn" id="button104"  style= "color:white" onclick="setColor('button104')";/>
-
-<input type="button" class="btn" id="button105"  style= "color:white" onclick="setColor('button105')";/>
-
-<input type="button" class="btn" id="button106"  style= "color:white" onclick="setColor('button106')";/>
-
-<input type="button" class="btn" id="button107"  style= "color:white" onclick="setColor('button107')";/>
-
-<input type="button" class="btn" id="button108"  style= "color:white" onclick="setColor('button108')";/>
-
-<input type="button" class="btn" id="button109"  style= "color:white" onclick="setColor('button109')";/>
-
-<input type="button" class="btn" id="button110"  style= "color:white" onclick="setColor('button110')";/>
-
-<input type="button" class="btn" id="button111"  style= "color:white" onclick="setColor('button111')";/>
-
-<input type="button" class="btn" id="button112"  style= "color:white" onclick="setColor('button112')";/>
-
-
-<p> charleston: <p>
-
-<input type="button" class="btn" id="button113"  style= "color:white" onclick="setColor('button113')";/>
-
-<input type="button" class="btn" id="button114"  style= "color:white" onclick="setColor('button114')";/>
-
-<input type="button" class="btn" id="button115"  style= "color:white" onclick="setColor('button115')";/>
-
-<input type="button" class="btn" id="button116"  style= "color:white" onclick="setColor('button116')";/>
-
-<input type="button" class="btn" id="button117"  style= "color:white" onclick="setColor('button117')";/>
-
-<input type="button" class="btn" id="button118"  style= "color:white" onclick="setColor('button118')";/>
-
-<input type="button" class="btn" id="button119"  style= "color:white" onclick="setColor('button119')";/>
-
-<input type="button" class="btn" id="button120"  style= "color:white" onclick="setColor('button120')";/>
-
-<input type="button" class="btn" id="button121"  style= "color:white" onclick="setColor('button121')";/>
-
-<input type="button" class="btn" id="button122"  style= "color:white" onclick="setColor('button122')";/>
-
-<input type="button" class="btn" id="button123"  style= "color:white" onclick="setColor('button123')";/>
-
-<input type="button" class="btn" id="button124"  style= "color:white" onclick="setColor('button124')";/>
-
-<input type="button" class="btn" id="button125"  style= "color:white" onclick="setColor('button125')";/>
-
-<input type="button" class="btn" id="button126"  style= "color:white" onclick="setColor('button126')";/>
-
-<input type="button" class="btn" id="button127"  style= "color:white" onclick="setColor('button127')";/>
-
-<input type="button" class="btn" id="button128"  style= "color:white" onclick="setColor('button128')";/>
+<br>
+<input type="submit" onclick="setValue()" ;/>
 
 </body>
+
+
 
 </html>
