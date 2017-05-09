@@ -181,8 +181,6 @@ void loop() {
 inter = digitalRead(0);  // leggi interruttore ON Off
  while(inter)   {
 
-leggiSeriale();
-
 ritmo1 = digitalRead(1);  // leggi ritmo 1 o  2
 ritmo2 = digitalRead(2);  // leggi ritmo 1 o  2
 
@@ -228,7 +226,8 @@ switch ( ritmo ) {
 
       case 3: {
         metronomo = metronomo4;
-    
+
+	 leggiSeriale();    
          memcpy(claveGR, claveGR4, 16);
          memcpy(clavePIC,clavePIC4,16);
          memcpy(campGR,campGR4,16);
