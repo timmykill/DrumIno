@@ -12,5 +12,4 @@ SERIAL STUFF
 
 
 #To do
-Scripting the interaction between the chromium log file and serial echo
 Sanitazing most of the code, currently ugly as hell.
