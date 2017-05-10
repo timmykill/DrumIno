@@ -1,5 +1,13 @@
 # DrumIno
 
+DrumIno is the automatic electronic drummer which plays alone.
+It is made of:
+1 arduino leonardo
+7 servomotors (1 for the crash cymbal, 2 for the snare drum, 2 for the charleston, 2 for the gable)
+4 electromagnets
+3 buttons (1 power button, 2 rhythm select)
+1 led (blink in timo to the rhythm)
+
 #Usage
 
 CHROMIUM
